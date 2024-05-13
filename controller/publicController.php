@@ -4,10 +4,10 @@ if (isset($_POST["numOne"], $_POST["numTwo"])) {
     $numOne = floatClean($_POST["numOne"]);
     $numTwo = floatClean($_POST["numTwo"]);
     $numbers = new PerformCalculationByInput;
-
+    
     $numbers->firstNum  = $numOne;
     $numbers->secondNum = $numTwo;
-
+    
     if (isset($_POST["callAdd"])) {
         $answer = $numbers->addNumbers();
     }else if (isset($_POST["callSub"])) {
@@ -15,13 +15,16 @@ if (isset($_POST["numOne"], $_POST["numTwo"])) {
     }else if (isset($_POST["callMul"])) {
         $answer = $numbers->multiplyNumbers();
     }else if (isset($_POST["callDiv"])) {
-        $answer = $numbers->divideNumbers();
+        if ($numTwo == 0) {
+            $answer = "It's impossible to divide by zero!";
+        }else {
+            $answer = $numbers->divideNumbers();
+        }
     }
-  //  return $answer;
-
+    
 }
 
-    // Appel du page d'accueil public
+
     $title = 'Object Experiment';
     include "../view/public/pubhome.view.php";
     die ();
