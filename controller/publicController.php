@@ -1,5 +1,6 @@
 <?php
-
+$numOne = 1;
+$numTwo = 1;
 if (isset($_POST["numOne"], $_POST["numTwo"])) {
     $numOne = floatClean($_POST["numOne"]);
     $numTwo = floatClean($_POST["numTwo"]);

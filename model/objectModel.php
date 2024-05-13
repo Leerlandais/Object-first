@@ -5,8 +5,8 @@ declare(strict_types = 1);
 class PerformCalculationByInput
 
 {
-    public float $firstNum = 1;
-    public float $secondNum = 1;
+    public float $firstNum;
+    public float $secondNum;
 
     public function addNumbers() : float
     {
